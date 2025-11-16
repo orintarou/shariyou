@@ -9,7 +9,7 @@ import Greeting from './components/Greeting';
 
 function selectPage(page, handlePageChange){
   return (page === "one") ? <Intro handleClick={handlePageChange}/> :
-    (page === "two") ? <Photos handle/> :
+    (page === "two") ? <Photos/> :
     <Greeting/>
 }
 
