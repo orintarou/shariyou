@@ -35,17 +35,21 @@ export default class Photos extends Component{
   render(){
     console.log(this.state.images);
     return(
-        <div className="font-serif flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+        <div className="font-sans text-xs flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
           <div>
-            Import your IG (images).
+            <div>Import your IG (images).</div>
+            <div>
+              <input onChange={this.handleChange} className="mt-[15px] hover:bg-gray-300" type="file" placeholder="images" multiple/>
+            </div>
           </div>
+        <div>
           {this.state.images.map((item) => {
             return(
               <img src={item.src}/>
             )
           })}
-          <input onChange={this.handleChange} className="border-[1px]" type="file" placeholder="images" multiple/>
         </div>
+      </div>
     )
   }
 }
