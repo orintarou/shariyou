@@ -29,7 +29,7 @@ export default class Page extends React.Component {
     event.preventDefault();
     
     this.setState({
-      page: (page === "one") ? "two" : "three"
+      page: (this.state.page === "one") ? "two" : "three"
     })
   }
 
