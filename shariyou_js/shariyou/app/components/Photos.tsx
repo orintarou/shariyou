@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-
+import axios from 'axios';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 
 export default class Photos extends Component{
   
@@ -27,9 +29,8 @@ export default class Photos extends Component{
     this.setState({
       images: images
     });
-
-    alert("uploaded some files");
-
+  
+    document.querySelector(".bg-change").style.backgroundColor = "black"
   }
 
   render(){
@@ -43,11 +44,15 @@ export default class Photos extends Component{
             </div>
           </div>
         <div>
-          {this.state.images.map((item) => {
-            return(
-              <img src={item.src}/>
-            )
-          })}
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid className="ml-[10%] mt-[10%]" container spacing={1}>
+            {this.state.images.map((image) => {
+              return(
+                <img className="width-[80px]" key={image.src} src={image.src}/>
+              )
+            })}
+          </Grid>
+        </Box>
         </div>
       </div>
     )

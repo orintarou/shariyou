@@ -35,7 +35,7 @@ export default class Page extends React.Component {
 
   render(){
     return (
-      <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black bg-change">
         {selectPage(this.state.page, () => this.handlePageChange())}
       </div>
     );    
